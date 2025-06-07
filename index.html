@@ -21,7 +21,7 @@
         </ul>
     </div>
 
-    <div id="video-container" class="center-video">
+    <div id="video-container">
         <video id="video" src="No text.mp4" controls></video>
     </div>
 
@@ -40,12 +40,41 @@
         window.addEventListener('keydown', (e) => {
             if (e.key.toLowerCase() === 'f') {
                 if (!document.fullscreenElement) {
-                    video.requestFullscreen();
+                    if (video.requestFullscreen) {
+                        video.requestFullscreen();
+                    } else if (video.webkitRequestFullscreen) { /* Safari */
+                        video.webkitRequestFullscreen();
+                    } else if (video.msRequestFullscreen) { /* IE11 */
+                        video.msRequestFullscreen();
+                    }
                     document.body.style.overflow = 'hidden';
                 } else {
-                    document.exitFullscreen();
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) { /* Safari */
+                        document.webkitExitFullscreen();
+                    } else if (document.msExitFullscreen) { /* IE11 */
+                        document.msExitFullscreen();
+                    }
                     document.body.style.overflow = '';
                 }
+            }
+        });
+
+        // Optional: Remove overflow hidden on fullscreenchange (for better UX)
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
+                document.body.style.overflow = '';
+            }
+        });
+        document.addEventListener('webkitfullscreenchange', () => {
+            if (!document.webkitFullscreenElement) {
+                document.body.style.overflow = '';
+            }
+        });
+        document.addEventListener('msfullscreenchange', () => {
+            if (!document.msFullscreenElement) {
+                document.body.style.overflow = '';
             }
         });
     </script>
