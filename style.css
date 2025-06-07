@@ -1,7 +1,7 @@
 body { 
     margin: 0;
-    background: #fff; /* white background */
-    color: #000; /* black text */
+    background: #fff;
+    color: #000;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -42,20 +42,16 @@ body {
     margin: 10px 0;
 }
 
-.center-video {
-    max-width: 640px;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-/* Video Player Styles */
+/* Responsive video container */
 #video-container {
-    width: 640px;
-    aspect-ratio: 16 / 9;
+    width: 100%;
+    max-width: 640px;
     position: relative;
     background: #000;
     border-radius: 8px;
     overflow: hidden;
+    aspect-ratio: 16 / 9; /* keeps 16:9 ratio responsively */
+    margin-bottom: 15px;
 }
 
 video {
@@ -66,8 +62,6 @@ video {
     border-radius: 8px;
     background: #000;
 }
-
-/* Removed all #video-container.fullscreen styles */
 
 /* Center Calendly widget container */
 .center-calendly {
