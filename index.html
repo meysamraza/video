@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hospital & Physician Alignment</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="container center-text">
+        <div class="heading">Where Hospitals and Physicians Finally Align</div>
+        <div class="subheading">
+            A smarter way to end physician burnout and stop revenue loss —
+            <strong>without overpaying recruiters.</strong>
+        </div>
+        <ul class="features">
+            <li>🕒 Cut credentialing delays by 50%</li>
+            <li>💠 Transparent pricing — no hidden fees</li>
+            <li>🧬 Handpicked physicians, faster than traditional agencies</li>
+        </ul>
+    </div>
+
+    <div id="video-container" class="center-video">
+        <video id="video" src="No text.mp4" controls></video>
+    </div>
+
+    <h2 class="calendly-heading center-text">Book a 15-minute strategy call with Dr. Obaid</h2>
+
+    <div class="calendly-inline-widget center-calendly"
+         data-url="https://calendly.com/arazameysam/30min"
+         style="position: relative; min-width:320px; height:630px;">
+        <iframe src="https://calendly.com/arazameysam/30min?embed_domain=localhost&embed_type=Inline"
+                width="100%"
+                height="100%"
+                frameborder="0"
+                title="Schedule a call with Dr. Obaid"></iframe>
+    </div>
+
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+    <script>
+        const videoContainer = document.getElementById('video-container');
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key.toLowerCase() === 'f') {
+                if (!videoContainer.classList.contains('fullscreen')) {
+                    videoContainer.classList.add('fullscreen');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    videoContainer.classList.remove('fullscreen');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
