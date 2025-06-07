@@ -35,15 +35,15 @@
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
     <script>
-        const videoContainer = document.getElementById('video-container');
+        const video = document.getElementById('video');
 
         window.addEventListener('keydown', (e) => {
             if (e.key.toLowerCase() === 'f') {
-                if (!videoContainer.classList.contains('fullscreen')) {
-                    videoContainer.classList.add('fullscreen');
+                if (!document.fullscreenElement) {
+                    video.requestFullscreen();
                     document.body.style.overflow = 'hidden';
                 } else {
-                    videoContainer.classList.remove('fullscreen');
+                    document.exitFullscreen();
                     document.body.style.overflow = '';
                 }
             }
