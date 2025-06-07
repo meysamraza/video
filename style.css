@@ -1,7 +1,7 @@
-body {
+body { 
     margin: 0;
-    background: #fff; /* changed to white */
-    color: #000; /* changed text color to black */
+    background: #fff; /* white background */
+    color: #000; /* black text */
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -38,9 +38,9 @@ body {
     line-height: 1.6;
 }
 
-    .features li {
-        margin: 10px 0;
-    }
+.features li {
+    margin: 10px 0;
+}
 
 .center-video {
     max-width: 640px;
@@ -67,32 +67,7 @@ video {
     background: #000;
 }
 
-#video-container.fullscreen {
-    position: fixed !important;
-    top: 50% !important;
-    left: 50% !important;
-    width: 100vw !important;
-    height: calc(100vw * 9 / 16) !important;
-    max-width: 100vw !important;
-    max-height: calc(100vw * 9 / 16) !important;
-    transform: translate(-50%, -50%) !important;
-    z-index: 9999 !important;
-    border-radius: 0 !important;
-    background: #000 !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    overflow: hidden !important;
-}
-
-    #video-container.fullscreen video {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        border-radius: 0 !important;
-    }
-
-/* Removed fullscreen button styles as button is removed */
+/* Removed all #video-container.fullscreen styles */
 
 /* Center Calendly widget container */
 .center-calendly {
